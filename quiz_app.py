@@ -1,18 +1,17 @@
 import streamlit as st
 
-
 def main():
     # Введение
     st.title("English Quiz Program")
     st.write("Welcome to the English Quiz!")
     st.write("Here are the words you can use to fill in the blanks:")
-
-    # Список всех ответов
+    
+    # Новый список ответов с измененной последовательностью
     answers = [
-        "trend", "ultimate", "undergo", "underlie", "undertake", "uniform",
-        "unify", "unique", "utilise", "valid", "vary", "vehicle", "version",
-        "via", "violate", "virtual", "visible", "vision", "visual", "volume",
-        "voluntary", "welfare", "whereas", "whereby", "widespread"
+        "violate", "vision", "volume", "valid", "welfare", "via",
+        "whereby", "uniform", "unify", "widespread", "unique", "trend",
+        "undergo", "undertake", "vehicle", "visual", "virtual", "underlie",
+        "vary", "ultimate", "visible", "whereas", "utilise"
     ]
     st.write(", ".join(answers))
     st.write("Use each word only once to answer the questions. Let's begin!")
@@ -41,20 +40,5 @@ def main():
         ("The __ of data collected during the study was impressive.", "volume"),
         ("Participation in this study is completely __ and not mandatory.", "voluntary"),
         ("The government focuses on improving the __ of its citizens through various programs.", "welfare"),
-        ("The first hypothesis was proven incorrect, __ the second one was successful.", "whereas"),
-        ("They implemented a system __ users can easily share their research findings.", "whereby"),
-        ("The idea has gained __ recognition among academics worldwide.", "widespread"),
-    ]
+        ("The first hypothesis was proven i
 
-    score = 0
-    for i, (question, correct_answer) in enumerate(questions, 1):
-        user_answer = st.text_input(f"{i}. {question}", key=f"q{i}")
-        if user_answer.lower() == correct_answer:
-            score += 1
-
-    if st.button("Submit"):
-        st.write(f"Quiz complete! You got {score} out of {len(questions)} correct.")
-
-
-if __name__ == "__main__":
-    main()
