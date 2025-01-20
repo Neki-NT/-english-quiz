@@ -40,5 +40,19 @@ def main():
         ("The __ of data collected during the study was impressive.", "volume"),
         ("Participation in this study is completely __ and not mandatory.", "voluntary"),
         ("The government focuses on improving the __ of its citizens through various programs.", "welfare"),
-        ("The first hypothesis was proven i
+        ("The first hypothesis was proven incorrect, __ the second one was successful.", "whereas"),
+        ("They implemented a system __ users can easily share their research findings.", "whereby"),
+        ("The idea has gained __ recognition among academics worldwide.", "widespread"),
+    ]
 
+    score = 0
+    for i, (question, correct_answer) in enumerate(questions, 1):
+        user_answer = st.text_input(f"{i}. {question}", key=f"q{i}")
+        if user_answer.lower() == correct_answer:
+            score += 1
+
+    if st.button("Submit"):
+        st.write(f"Quiz complete! You got {score} out of {len(questions)} correct.")
+
+if __name__ == "__main__":
+    main()
